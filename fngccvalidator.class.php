@@ -2,7 +2,7 @@
 
 /*
 FNG Credit Card Validator v1.1
-Copyright © 2009 Fake Name Generator <http://www.fakenamegenerator.com/>
+Copyright Â© 2009 Fake Name Generator <http://www.fakenamegenerator.com/>
 
 FNG Credit Card Validator v1.1 by the Fake Name Generator is licensed to you
 under a Creative Commons Attribution-Share Alike 3.0 United States License.
@@ -73,12 +73,12 @@ class fngccvalidator{
 	public function LuhnCheck($ccnum){
 		$checksum = 0;
 		for ($i=(2-(strlen($ccnum) % 2)); $i<=strlen($ccnum); $i+=2){
-			$checksum += (int)($ccnum{$i-1});
+			$checksum += (int)($ccnum[$i-1]);
 		}
 		
 		// Analyze odd digits in even length strings or even digits in odd length strings.
 		for ($i=(strlen($ccnum)% 2) + 1; $i<strlen($ccnum); $i+=2){
-			$digit = (int)($ccnum{$i-1}) * 2;
+			$digit = (int)($ccnum[$i-1]) * 2;
 			if ($digit < 10){
 				$checksum += $digit;
 			}else{
